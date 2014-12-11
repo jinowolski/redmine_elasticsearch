@@ -11,18 +11,18 @@ class ParentProject < Project
                   index_analyzer: {
                       type: 'custom',
                       tokenizer: 'standard',
-                      filter: %w(lowercase main_ngrams russian_morphology english_morphology main_stopwords)
+                      filter: %w(lowercase main_ngrams english_morphology polish_stem main_stopwords)
                   },
                   search_analyzer: {
                       type: 'custom',
                       tokenizer: 'standard',
-                      filter: %w(lowercase russian_morphology english_morphology main_stopwords)
+                      filter: %w(lowercase english_morphology polish_stem main_stopwords)
                   }
               },
               filter: {
                   main_stopwords: {
                       type: 'stop',
-                      stopwords: %(а без более бы был была были было быть в вам вас весь во вот все всего всех вы где да даже для до его ее если есть еще же за здесь и из или им их к как ко когда кто ли либо мне может мы на надо наш не него нее нет ни них но ну о об однако он она они оно от очень по под при с со так также такой там те тем то того тоже той только том ты у уже хотя чего чей чем что чтобы чье чья эта эти это я a an and are as at be but by for if in into is it no not of on or such that the their then there these they this to was will with)
+                      stopwords: %(а без более бы был была были было быть в вам вас весь во вот все всего всех вы где да даже для до его ее если есть еще же за здесь и из или им их к как ко когда кто ли либо мне может мы на надо наш не него нее нет ни них но ну о об однако он она они оно от очень по под при с со так также такой там те тем то того тоже той только том ты у уже хотя чего чей чем что чтобы чье чья эта эти это я a an and are as at be but by for if in into is it no not of on or such that the their then there these they this to was will with ach aj albo bardzo bez bo być ci cię ciebie co czy daleko dla dlaczego dlatego do dobrze dokąd dość dużo dwa dwaj dwie dwoje dziś dzisiaj gdyby gdzie go ich ile im inny ja ją jak jakby jaki je jeden jedna jedno jego jej jemu jeśli jest jestem jeżeli już każdy kiedy kierunku kto ku lub ma mają mam mi mną mnie moi mój moja moje może mu my na nam nami nas nasi nasz nasza nasze natychmiast nią nic nich nie niego niej niemu nigdy nim nimi niż obok od około on ona one oni ono owszem po pod ponieważ przed przedtem są sam sama się skąd tak taki tam ten to tobą tobie tu tutaj twoi twój twoja twoje ty wam wami was wasi wasz wasza wasze we więc wszystko wtedy wy żaden zawsze że a i o u w z wrote napisał)
                   },
                   main_ngrams: {
                       type: 'edgeNGram',
